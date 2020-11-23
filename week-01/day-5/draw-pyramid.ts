@@ -1,11 +1,31 @@
 'use strict';
 
-let lineCount: number = 4;
+
+
+// let lineCount: number = 4;
+
+
+// let stars: string='*';
+// let space: String='';
+
+
+
+// for (let i: number = 1; i <= lineCount; i++){
+//   for(){
+// space = space + ' '
+//   }
+//   console.log (space + stars);
+//   stars = stars + '**'
+// }
 
 
 
 
-// "aaa*aaa"
-// "aa***aa"
-// "ä*****a"
-// "*******"
+
+
+// "aaaa*aaa"
+// "aaa***aa"
+// "äa*****a"
+// "a*******a"
+// "*********"
+
