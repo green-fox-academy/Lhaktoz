@@ -2,8 +2,9 @@
 //    which logs to the console the input parameters
 //    (can have multiple number of arguments)
 
-function printParams(input){
+function printParams(...input){
+  
   console.log(input);
 }
 
-printParams('Miska', 'kata')
+printParams('Miska', 'kata');
