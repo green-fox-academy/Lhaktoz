@@ -23,15 +23,22 @@ map[67] = 'C';
 console.log(map);
 
 //Print all the keys
+
 console.log(Object.keys(map));
 
 //Print all the values
+
 // console.log(Object.values(map));??
+for (let keys in map) {
+  console.log(map[keys]);
+}
 
 //Add value D with the key 68
 map[68] = 'D';
 
 //Print how many key-value pairs are in the map??
+let count = Object.keys(map);
+console.log(count.length);
 
 //Print the value that is associated with key 99
 console.log(map[99]);
