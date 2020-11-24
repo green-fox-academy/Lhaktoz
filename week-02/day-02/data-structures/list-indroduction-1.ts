@@ -22,7 +22,7 @@
 // William
 // Remove all elements
 
-let names: string[] =[];
+let names: string[] = [];
 console.log(names.length);
 names.push('William', 'John', 'Amanda');
 
@@ -40,6 +40,7 @@ names.forEach(function(value){
 for(let i:number = 0 ; i < names.length; i++){
   console.log( `${i+1}. ${names[i]}`);
 };
+
 
 delete names[1];
 console.log(names);
