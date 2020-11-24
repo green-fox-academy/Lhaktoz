@@ -5,11 +5,11 @@
 let map = {};
 
 //Print out whether the map is empty or not
-// if (map.length === 0){
-//   console.log('empty');
-// } else {
-//   console.log('not empty');
-// }
+if (Object.keys(map).length === 0){
+  console.log('empty');
+} else {
+  console.log('not empty');
+}
 
 
 //Add the following key-value pairs to the map
