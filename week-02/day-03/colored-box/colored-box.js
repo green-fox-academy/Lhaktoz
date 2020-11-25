@@ -37,13 +37,13 @@ const ctx = canvas.getContext('2d');
 // ctx.moveTo(200,100);
 // ctx.lineTo(400,100);
 // ctx.stroke();
-// ctx.strokeStyle = 'green'
+// ctx.strokeStyle = 'yellow'
 // ctx.lineTo(400,200);
 // ctx.stroke();
 // ctx.strokeStyle = 'blue'
 // ctx.lineTo(200,200);
 // ctx.stroke();
-// ctx.strokeStyle = 'yellow'
+// ctx.strokeStyle = 'green'
 // ctx.lineTo(200,100);
 // ctx.stroke();
 
@@ -58,3 +58,4 @@ drawlinewithcolor(200,100,400,100,'red');
 drawlinewithcolor(400,100,400,200,'green');
 drawlinewithcolor(400,200,200,200,'blue');
 drawlinewithcolor(200,200,200,100,'yellow');
+

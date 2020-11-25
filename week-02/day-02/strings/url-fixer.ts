@@ -8,8 +8,8 @@ let url: string = 'https//www.reddit.com/r/nevertellmethebots';
 let replacedUrl: string = url.replace('bots','odds');
 let firstPartUrl: string = replacedUrl.slice(0,4);
 let lastPartUrl: string = replacedUrl.slice(5);
-// console.log(firstPartUrl);
-// console.log(lastPartUrl);
+
+
 firstPartUrl = firstPartUrl +':'
 let newUrl: string = firstPartUrl.concat(lastPartUrl);
 
