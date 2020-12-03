@@ -8,6 +8,7 @@
 const fs = require('fs');
 let fileArray = []
 let fileContent = fs.readFileSync('myfile.txt', 'utf-8');
+
 function countLine (filename){
   let fileArray = (fileContent.split('\r\n'))
 

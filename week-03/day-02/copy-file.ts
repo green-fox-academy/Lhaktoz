@@ -9,6 +9,7 @@
   function copyFile (fileFrom,fileTo){
   let fileContent = fs.readFileSync(fileFrom, 'utf-8');
   fs.writeFileSync(fileTo,fileContent);
+  return 
   }
 
   
@@ -18,4 +19,5 @@ try {
   
   }
   catch(e){
+    
   }  
