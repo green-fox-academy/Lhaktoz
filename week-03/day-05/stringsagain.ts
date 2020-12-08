@@ -9,7 +9,7 @@ function removex(str: string){
 
     str = str.slice(0,str.indexOf('x')) + str.slice(str.indexOf('x')+1)
     return removex(str);
-  }
+  } 
 }
 
 console.log(removex('Axalmax'));

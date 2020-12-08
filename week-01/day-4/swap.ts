@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 let numberToSwap1: number = 123;
 let numberToSwap2: number = 526;

@@ -6,8 +6,9 @@
 
 //Define a recursive fibonacci(n) method that returns the nth fibonacci number, with n=0 representing the start of the sequence.
 
-function fibonacci(n: number){
-  
-}
+// function fibonacci(n: number){
+
+// }
+// }
 
 
