@@ -13,5 +13,5 @@ console.log(fileContent);
 catch(e){
   console.log('Unable to read file: my-file.txt')
 }
-console.log('látom?')
+
 

@@ -9,19 +9,12 @@
 // into the file and each line should read 'apple'
 // The function should not raise any errors if it could not write the file.
 
-const fs = require('fs');
+
 
 function writeToFile (path, word, number){
+  const fs = require('fs');
+  try {
   fs.writeFileSync(path,(word + '\r\n').repeat(number))
-  
+  } catch (e) {}
 }
 
-
-try {
-
-writeToFile('myfile.txt', 'apple', 6);
-
-}
-catch(e){
-  
-}

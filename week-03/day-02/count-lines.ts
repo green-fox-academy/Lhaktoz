@@ -5,24 +5,20 @@
 // It should return zero if it can't open the file, and
 // should not raise any error.
 
-const fs = require('fs');
-let fileArray = []
-let fileContent = fs.readFileSync('myfile.txt', 'utf-8');
-
-function countLine (filename){
-  let fileArray = (fileContent.split('\r\n'))
-
-console.log(fileArray.length)
-
+function countLine (fileName: string){
+  let fileArray = []
+  const fs = require('fs');
+  try {
+  let fileContent = fs.readFileSync(fileName, 'utf-8');
+  let fileArray = fileContent.split('\r\n');
+  console.log(fileArray.length)
+  }
+  catch {
+    console.log ('0')
+  }
 }
 
+countLine('myfile.txt')
 
-try {
-
-countLine(fileContent)
-}
-catch(e){
-  return console.log(0)
-}
 
 
