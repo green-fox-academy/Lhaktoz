@@ -1,23 +1,27 @@
 'use strict';
 
-// function removeDuplicate() {
-//   const fs = require('fs');
-//   try {
-//     let fileContent = fs.readFileSync('doubled.txt', 'utf-8'); 
-//     let fileArray = fileContent.split('');
-//     for (let i = 0; i < fileArray.length; i+=2) {
-//       fileArray.splice(i,1);
-//     }
-//     let newFileContent = fileArray.join('')
-//     fs.writeFileSync('doubled.txt', newFileContent);
-//   } catch (e) {
 
-//   }
+  const fs = require('fs');
+  try {
+    let fileContent = fs.readFileSync('Doubled.txt', 'utf-8'); 
+    let fileArray = fileContent.split('');
+    var newarr = [fileArray[0]];
+    for (var i = 1; i < fileArray.length; i++) {
+       if (fileArray[i]!=fileArray[i-1]) newarr.push(fileArray[i]);
+    }
+    
+    let newFileContent = newarr.join('')
+    console.log(newFileContent)
+  } catch (e) {
+    console.log(e);
+  }
+
+
+// let fileArray = ['a', 'a','b','b','c','c']
+// var newarr = [fileArray[0]];
+// for (var i = 1; i < fileArray.length; i++) {
+//    if (fileArray[i]!=fileArray[i-1]) newarr.push(fileArray[i]);
 // }
 
-// let fileArray = ['a','a','b','b','c','c','d','d'];
-
-
-//     let newFileContent = fileArray.join('')
-
-//     console.log(newFileContent)
+// let newFileContent = newarr.join('')
+// console.log(newFileContent);
