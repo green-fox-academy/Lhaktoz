@@ -67,7 +67,7 @@ class SharpieSet {
 // let sharpieArray: Sharpie[] = [sharpie1,sharpie2,sharpie3];
 // let mySet = new SharpieSet(sharpieArray);
 
-// vagy  60-65 helyett:
+// vagy  62-68 helyett:
 // let sharpieArray: Sharpie[] = [
 //   new Sharpie('red', 3),
 //   new Sharpie('blue', 4),
