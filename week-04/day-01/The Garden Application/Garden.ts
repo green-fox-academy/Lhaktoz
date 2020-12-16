@@ -12,6 +12,6 @@ class Garden {
     this._trees = [];
   }
   wateringPlants (amount: number){
-
+      
   }
 }
