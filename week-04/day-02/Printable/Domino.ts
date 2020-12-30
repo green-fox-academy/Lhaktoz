@@ -25,9 +25,6 @@ function initializeDomino(): Domino[] {
   ]
 }
 
-
-
-
 for (let domino of dominoes) {
   domino.printAllFields();
 }

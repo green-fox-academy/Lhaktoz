@@ -6,10 +6,10 @@
 let toBeReversed: string = `.eslaf eb t'ndluow ecnetnes siht ,dehctiws erew eslaf dna eurt fo sgninaem eht fI`;
 
 let splitToBeReversed: string[] = toBeReversed.split("");
-// console.log(splitToBeReversed);
+console.log(splitToBeReversed);
 
 let reverseArrey: string[] = splitToBeReversed.reverse();
-// console.log(reverseArrey);
+console.log(reverseArrey);
 
 let reversed: string = reverseArrey.join("");
 console.log(reversed);

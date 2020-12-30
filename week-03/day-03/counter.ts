@@ -14,33 +14,33 @@
 // Run the test file with ts-node
 
 export class Counter {
-    _integer: number;
-    _startingValue: number;
+  _integer: number;
+  _startingValue: number;
 
-    constructor(integer:number = 0){
-     this._integer = integer;
-     this._startingValue = integer;
-     }
+  constructor(integer:number = 0) {
+  this._integer = integer;
+  this._startingValue = integer;
+  }
 
-    add(number?: number){
-      if (number){
-      this._integer += number;
-      } else {
-        this._integer ++;
+  add(number?: number) {
+    if (number){
+    this._integer += number;
+    } else {
+      this._integer ++;
       }
-    }
+  }
 
-    get(){
-      return this._integer;
-    }
+  get() {
+    return this._integer;
+  }
 
-    reset(){
-      this._integer = this._startingValue;
-    }
-}
+  reset(){
+  this._integer = this._startingValue;
+  }
+  }
 
-let counter1 = new Counter();
-console.log(counter1._integer)
+  let counter1 = new Counter();
+  console.log(counter1._integer);
 
-let counter2 = new Counter(4);
-console.log(counter2._integer);
+  let counter2 = new Counter(4);
+  console.log(counter2._integer);

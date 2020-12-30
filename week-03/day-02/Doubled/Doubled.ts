@@ -10,17 +10,7 @@
      if (fileArray[i]!=fileArray[i-1]) newarr.push(fileArray[i]);
   }
   let newFileContent = newarr.join('')
-  console.log(newFileContent)
+  console.log(newFileContent);
   } catch (e) {
     console.log(e);
   }
-
-
-// let fileArray = ['a', 'a','b','b','c','c']
-// var newarr = [fileArray[0]];
-// for (var i = 1; i < fileArray.length; i++) {
-//    if (fileArray[i]!=fileArray[i-1]) newarr.push(fileArray[i]);
-// }
-
-// let newFileContent = newarr.join('')
-// console.log(newFileContent);

@@ -8,31 +8,34 @@
 // Every animal can drink() which decreases their thirst by one
 // Every animal can play() which increases both by one
 
-class Animal {
-  _hunger: number;
-  _thirst: number;
+export class Animal {
+ protected  _hunger: number;
+ protected _thirst: number;
 
-  constructor (hunger:number = 50, thirst:number = 50){
-    
-   this._hunger = hunger;
-   this._thirst = thirst;
+  constructor (hunger: number = 50, thirst: number = 50) {
+    this._hunger = hunger;
+    this._thirst = thirst;
   }
   
-  eat() {
-    this._hunger--;
+  public get hunger(): number {
+    return this._hunger; 
   }
 
-  drink(){
-    this._thirst--;
+  public eat() {
+    return this._hunger--;
   }
 
-  play(){
+  public drink() {
+    return this._thirst--;
+  }
+
+  public play() {
     this._hunger++;
     this._thirst++;
   }
 }
 
-let animal1 = new Animal();
-console.log(animal1);
-animal1.play();
-console.log(animal1._thirst);
+// let cat = new Animal();
+// console.log(cat);
+// cat.play();
+// console.log(cat._thirst);

@@ -6,10 +6,10 @@
 // Every sharpie object is created with a default 100 as inkAmount
 // We can use() the sharpie objects which decreases inkAmount
 
-class Sharpie {
-_color: string;
-_width: number;
-_inkAmount: number;
+export class Sharpie {
+protected _color: string;
+protected _width: number;
+protected _inkAmount: number;
 
 constructor (color: string, width: number){
   this._color = color;
@@ -20,6 +20,11 @@ constructor (color: string, width: number){
 use (){
   this._inkAmount -= 20;
 }
+
+public get inkAmount(): number {
+  return this._inkAmount;
+}
+
 }
 
 let sharpie1 = new Sharpie('purple', 60);
