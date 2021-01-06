@@ -1,11 +1,21 @@
 'use strict';
 
+// function changeMatrix (matrix: number[][]) {
+//   let newmatrix: number[][] = []
+//   for (let i: number = 0; i < matrix.length; i++) {
+//     newmatrix.push([]);
+//     for (let j: number = 0; j < matrix[i].length; j++) {
+//         newmatrix[i].unshift(matrix[(matrix.length-1)-i][j]);
+//       }
+//     }
+//     return newmatrix
+// }
 function changeMatrix (matrix: number[][]) {
   let newmatrix: number[][] = []
-  for (let i: number = 0; i < matrix.length; i++) {
+  for (let i: number = matrix.length -1 ; i >= 0 ; i--) {
     newmatrix.push([]);
     for (let j: number = 0; j < matrix[i].length; j++) {
-        newmatrix[i].unshift(matrix[(matrix.length-1)-i][j]);
+        newmatrix[i].unshift(matrix[i][j]);
       }
     }
     return newmatrix
