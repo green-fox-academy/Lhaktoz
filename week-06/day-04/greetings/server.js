@@ -7,16 +7,15 @@ app.set('view engine', 'ejs');
 
 // home page
 app.get('/', (req, res) => {
-  // render `home.ejs`
-  res.render('home', {
-    title: 'Hello World'
-  });
+  let name = req.query.name;
+  if (name == undefined) {
+    res.render('home', {name: 'Guest'});
+  } else {
+    res.render('home', {name: name});
+    }
 });
 
-app.get('/home', (req,res) => {
-  let name = req.query.name;
-  res.render('webshop', {name: name});
-})
+
 
 // start express app on port 3000
 app.listen(PORT, () => {
