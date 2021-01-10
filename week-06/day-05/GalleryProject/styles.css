@@ -4,7 +4,8 @@
 }
 
 body {
-  background-color: grey;
+  background: rgb(155,155,158);
+  background: linear-gradient(90deg, rgba(155,155,158,1) 5%, rgba(244,237,237,1) 50%, rgba(155,155,158,1) 94%);
 }
 
 main {
@@ -20,7 +21,6 @@ height: 100%;
 } 
 
 #titleBox {
-  /* background-color: lightgreen; */
   height: 15%;
   display: flex;
   justify-content: center;
@@ -36,11 +36,24 @@ height: 100%;
   flex-direction: row;
 }
 
+#textBox {
+  height: 20%;
+  min-width: 8px;
+  opacity: 0.4;
+  background-color: black;
+  
+}
+
 #imgscreenBox {
   width: 90%;
   background-image: url("imgs/img2.jpg");
-  background-size: cover;
+  background-size: cover; 
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
+
+
 
 .arrowBox {
   display: flex;
