@@ -4,8 +4,8 @@
 }
 
 body {
-  background: rgb(155,155,158);
-  background: linear-gradient(90deg, rgba(155,155,158,1) 5%, rgba(244,237,237,1) 50%, rgba(155,155,158,1) 94%);
+  background: rgb(189,189,189);
+  background: linear-gradient(90deg, rgba(189,189,189,1) 2%, rgba(242,242,242,1) 49%, rgba(189,189,189,1) 97%);
 }
 
 main {
@@ -57,7 +57,8 @@ height: 100%;
 
 .arrowBox {
   display: flex;
-  background-color: white;
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 26%, rgba(226,226,226,1) 97%);
   width: 5%;
   justify-content: center;
   align-items: center;
