@@ -29,31 +29,29 @@ height: 100%;
 }
 
 #photoViewerBox {
-  /* background-color:cadetblue; */
   height: 70%;
   min-width: 5rem;
   display: flex;
   flex-direction: row;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #textBox {
-  height: 20%;
+  min-height: 25%;
   min-width: 8px;
-  opacity: 0.4;
+  opacity: 0.8;
   background-color: black;
-  
 }
 
 #imgscreenBox {
   width: 90%;
-  background-image: url("imgs/img2.jpg");
+  background-image: url("imgs/img6.jpg");
   background-size: cover; 
+  /* z-index: -1; */
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
 }
-
-
 
 .arrowBox {
   display: flex;
@@ -62,6 +60,10 @@ height: 100%;
   width: 5%;
   justify-content: center;
   align-items: center;
+}
+
+button {
+  border: none;
 }
 
 #rightArrowBox {
