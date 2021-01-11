@@ -22,7 +22,6 @@
     <script src="createelement-1.js"></script> -->
     <script>
       const newAsteroid = document.createElement('li');
-      const newAsteroid2 = document.createElement('li');
       const asteroidList = document.querySelector('ul.asteroids');
 
       // Add an item that says 'The Green Fox' to the asteroid list.
@@ -32,7 +31,7 @@
       console.log(asteroidList)
 
       // Add an item that says 'The Lamplighter' to the asteroid list.
-
+      const newAsteroid2 = document.createElement('li');
       newAsteroid2.textContent = 'The Lamplighter';
       asteroidList.appendChild(newAsteroid2);
       console.log(asteroidList)

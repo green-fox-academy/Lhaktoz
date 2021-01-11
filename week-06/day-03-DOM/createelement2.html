@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Workshop: CreateElement</title>
+  </head>
+  <body>
+    <ul class="asteroids">
+      <li>The King</li>
+    </ul>
+
+   <!-- You can work in the html or in a separate js file. Like: -->
+    <script>
+   
+      const planetData = [
+        {
+          category: 'inhabited',
+          content: 'Foxes',
+          asteroid: true,
+        },
+        {
+          category: 'inhabited',
+          content: 'Whales and Rabbits',
+          asteroid: true,
+        },
+        {
+          category: 'uninhabited',
+          content: 'Baobabs and Roses',
+          asteroid: true,
+        },
+        {
+          category: 'inhabited',
+          content: 'Giant monsters',
+          asteroid: false,
+        },
+        {
+          category: 'inhabited',
+          content: 'Sheep',
+          asteroid: true,
+        },
+      ];
+
+      // Remove the king from the list.
+      const asteroidList = document.querySelector('.asteroids');
+      const theKing = document.querySelector('li');
+      asteroidList.removeChild(theKing);
+
+      // Fill the list based on the following list of objects.
+      // Each list item should have its category as a class and its content as text content. -->
+      // Only add the asteroids to the list.
+
+  
+
+      for( let i = 0; i < Object.entries(planetData).length; i++) {
+        if(planetData[i].asteroid) {
+        const newList = document.createElement('li');
+        newList.className = planetData[i].category;
+        newList.innerText = planetData[i].content;
+        asteroidList.appendChild(newList)
+       }
+      }
+      console.log(asteroidList)
+
+    </script>
+    <!-- OR -->
+    <!-- <script src="createelement-2.js"></script> --> 
+  </body>
+</html>
