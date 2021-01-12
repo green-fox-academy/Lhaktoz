@@ -31,4 +31,12 @@ app.get('/greeter', (req, res) => {
     }
   });
 
+app.get('/appenda/:appendable', (req, res) => {
+  if(!req.params.appendable) {
+    res.status(400).json({"error": "Please provide an appendable"})
+  } else {
+    res.json({"appended": `${req.params.appendable}a`});
+  }
+})
+
 app.listen(3000);
