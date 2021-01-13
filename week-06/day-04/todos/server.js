@@ -4,6 +4,7 @@ app.set('view engine', 'ejs')
 
 
 app.get('/', (req, res) => {
-  res.send('asdf')
+
 });
+
 app.listen(3000);

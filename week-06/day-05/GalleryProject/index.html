@@ -9,22 +9,32 @@
 <body>
   
   <main id="gallery">
-    <div id="title"></div>
-    <div id="photoViewer">
-      <div id="leftarrow"></div>
-      <div id="imgscreen"></div>
+    <div class="flex-container">
+      <div id="titleBox">
+       <h1>My Gallery</h1>
+     </div>
+      <div id="photoViewerBox" >
+        <div id="leftarrowBox" class="arrowBox">
+          <button><img src = "imgs/arrow.svg"></button>
+        </div>
+        <div id="imgscreenBox">
+            <div id = "textBox"></div>
+        </div>
+        <div id="rightArrowBox" class="arrowBox">
+          <button><img src = "imgs/arrow.svg"></button>
+        </div>
+      </div>
+      <div id="thumbnailBox">
+        <div class="thumbnail"></div>
+        <div class="thumbnail"></div>
+        <div class="thumbnail"></div>
+        <div class="thumbnail"></div>
+        <div class="thumbnail"></div>
+        <div class="thumbnail"></div>
+        <div class="thumbnail"></div>
+        <div class="thumbnail"></div>
     </div>
-    <div id="thumbnails">
-      <div class="thumbnail"></div>
-      <div class="thumbnail"></div>
-      <div class="thumbnail"></div>
-      <div class="thumbnail"></div>
-      <div class="thumbnail"></div>
-      <div class="thumbnail"></div>
-      <div class="thumbnail"></div>
-      <div class="thumbnail"></div>
-    </div>
-
+  </div>
   </main>
 
   <script src="gallery.js"></script>

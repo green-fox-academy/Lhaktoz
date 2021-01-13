@@ -1,14 +1,17 @@
 'use strict';
 
 const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
 app.use(express.static('assets'));
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
+
 
 app.get('/doubling', (req, res) => {
   if(!req.query.input) {
@@ -39,4 +42,10 @@ app.get('/appenda/:appendable', (req, res) => {
   }
 })
 
-app.listen(3000);
+app.post('/dountil/:action', (req, res) => {
+ console.log(req.body);
+})
+
+app.listen(3000, () =>{
+  console.log('Server is listening!');
+});
