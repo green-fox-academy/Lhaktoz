@@ -5,35 +5,35 @@ xhr.open('GET', 'https://swapi.dev/api/people');
 
 xhr.send()
 
-function handleReadyStateChange() {
-  if(xhr.readyState === XMLHttpRequest.DONE) {
-    console.log(xhr.status);
-    // console.log(xhr.response);
+// function handleReadyStateChange() {
+//   if(xhr.readyState === XMLHttpRequest.DONE) {
+//     console.log(xhr.status);
+//     // console.log(xhr.response);
 
-    let characters = JSON.parse(xhr.response);
+//     let characters = JSON.parse(xhr.response);
 
-    characters.results.forEach(element => {
-      console.log(element.name);
+//     characters.results.forEach(element => {
+//       console.log(element.name);
       
-    })
-  }
-}
+//     })
+//   }
+// }
 
-const resultList = document.querySelector('#list');
+const characterList = document.querySelector('#characterList');
+const moviesList = document.querySelector('#moviesList');
 
-function addExpenseToList(expense) {
-  const row = document.createElement('li');
-  row.innerHTML = `${expense.name}: <strong>${expense.amount}</strong>`;
-  expenseList.appendChild(row);
-}
+// function addExpenseToList(expense) {
+//   const row = document.createElement('li');
+//   row.innerHTML = `${expense.name}: <strong>${expense.amount}</strong>`;
+//   expenseList.appendChild(row);
+// }
 
 const inputName = document.querySelector('#add-name');
-const inputAmount = document.querySelector('#add-amount');
-const button = document.querySelector('#add-expense');
+const button = document.querySelector('#search');
 
-button.onclick = () => {
-  let newExpense = {
-    name: inputName.value,
-    amount: Number(inputAmount.value),
-  }
-  console.log(newExpense);
+// button.onclick = () => {
+//   const xh
+//   let newSearch = {
+//     name: inputName.value,
+//     amount: Number(inputAmount.value),
+//   }
