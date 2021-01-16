@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <title>Workshop: CreateElement</title>
     <style>
-      div#pets {
+      /* div#pets {
 
-      }
+      } */
     </style>
   </head>
   <body>
     <div id="pets"></div>
 
-    <!-- You can work in the html or in a separate js file. Like:
+  <!-- You can work in the html or in a separate js file. Like: -->
     <script>
       const kids = [
         { 'petName': 'Wattled crane', 'owner': 'Bryant' },
@@ -28,13 +28,35 @@
         { 'petName': 'Carpet snake', 'owner': 'Veda' },
         { 'petName': 'Lesser mouse lemur', 'owner': 'Isidor' },
       ];
-      1) Create an <article> element for each kid
-      2) Create a <h3> and a <p> element for each article and append them as a child to the <article>
-          - The H3 should contain the owner's name
-          - The p should contain the pet's name
-      3) Add the article to the pets div.
+      // 1) Create an <article> element for each kid
+      // 2) Create a <h3> and a <p> element for each article and append them as a child to the <article>
+      //     - The H3 should contain the owner's name
+      //     - The p should contain the pet's name
+      // 3) Add the article to the pets div.
+        const petDIV = document.querySelector('#pets');
+
+        // const newArticle = document.createElement('article');
+        // newArticle.innerText = 'blabla'
+        // petDIV.appendChild(newArticle);
+        // const newH3 = document.createElement('h3');
+        // newH3.innerText = kids[1].owner;
+        // newArticle.append(newH3);
+
+
+        for(let i = 0; i < kids.length; i++) {
+          const newArticle = document.createElement('article');
+          petDIV.appendChild(newArticle);
+          const newH3 = document.createElement('newH3');
+          newH3.innerText = kids[i].owner + '\r\n';
+          newH3.style.fontWeight = 'bold';
+          const newP = document.createElement('newP');
+          newP.innerText = kids[i].petName;
+          newArticle.appendChild(newH3);
+          newArticle.appendChild(newP);
+        }
+
     </script>
-    OR
+    <!-- OR
     <script src="createelement-3.js"></script> -->
   </body>
 </html>
