@@ -38,5 +38,15 @@ const removeSecondLetter = (word) =>  {
 }
 
 
-console.log(mapWith(words, removeSecondLetter));
-// expected result: ['mp','rdc', 'fle']
+console.log('reduce'.slice(0,1))
+const removeSecondLetter2 = (word) =>  {
+  let newword = '';
+  for ( let i = 0; i < word.length; i +=2) {
+    newword = newword + word.slice(i,i+1);
+  }
+  return newword;
+}
+
+
+console.log(mapWith(words, removeSecondLetter2));
+// // expected result: ['mp','rdc', 'fle']
