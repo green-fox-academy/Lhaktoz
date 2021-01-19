@@ -31,6 +31,19 @@ app.get('/hello', (req, res) => {
   res.send('hello word');
 });
 
+app.get('/posts', (req, res) => {
+  conn.query('SELECT * FROM posts', (err, rows) => {
+    if(err) {
+      console.log(err.toString());
+      res.status(500).json({'error': 'database error'});
+      return;
+    }
+    res.setHeader('Content-type', 'application/json');
+    res.status(200).json(rows);
+  });
+});
+
+
 app.listen(3000, () => {
   console.log(`Listening on port 3000`);
 });
