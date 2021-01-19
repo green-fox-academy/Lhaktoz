@@ -19,9 +19,10 @@
         width: 500px;
         height: 320px;
         border: 1px solid #3a3a3a;
-        background-image: url("../assets/mp.jpg");
+        background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg?crop=1.00xw:0.756xh;0,0.0756xh&resize=980:*");
         background-size: 200%;
       }
+
     </style>
   </head>
   <body>
@@ -50,15 +51,39 @@
     <script src="bubbling.js"></script> -->
     <script>
       let nav = document.querySelector('nav');
+      let imgInspector = document.querySelector('.img-inspector');
       // let navigationBar = document.querySelectorAll('button[data-action = "move"]');
       // let zoomBar = document.querySelectorAll('button[data-action = "zoom"]');
 
-      nav.addEventListener('click', () => {
-        console.log(event.target.getAttribute('data-direction'));
-        console.log(event.target['data-direction']);
-        console.log(event.target.data-direction);
+      let positionY = 0;
+      let positionX = 0;
+      let size = 200;
+     
+      nav.addEventListener('click', (event) => {
+       //console.log(event.target.getAttribute('data-direction'));
+       // console.log(event.target.dataset.direction);
+       if(event.target.dataset.direction === 'up') {
+         positionY += 10;
+        imgInspector.style.backgroundPositionY = `${positionY}px`;
+       } else if(event.target.dataset.direction === 'down') {
+         positionY -=10;
+         imgInspector.style.backgroundPositionY = `${positionY}px`;
+       } else if(event.target.dataset.direction === 'left') {
+        positionX -=10;
+         imgInspector.style.backgroundPositionX = `${positionX}px`;
+       } else if(event.target.dataset.direction === 'right') {
+        positionX +=10;
+        imgInspector.style.backgroundPositionX = `${positionX}px`;
+       }
+      });
 
-
+      nav.addEventListener('click', (event) => {
+        if(event.target.dataset.direction === "in") {
+          size += 20;
+        } else if(event.target.dataset.direction === "out") {
+          size -= 20;
+        }
+        imgInspector.style.backgroundSize = `${size}%`;
       });
 
 
