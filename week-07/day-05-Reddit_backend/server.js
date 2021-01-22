@@ -44,7 +44,6 @@ app.get('/posts', (req, res) => {
 });
 
 app.post('/posts', (req, res) => {
-  console.log(req.body.title,req.body.url)
 conn.query(`INSERT INTO posts (title, url)
           VALUES (?,?);`, [req.body.title, req.body.url], (err, rows) => {
           if(err){
@@ -55,6 +54,26 @@ conn.query(`INSERT INTO posts (title, url)
           });
 });
 
+
+app.put(`/posts/:id/upvote`, (req, res) => {
+  conn.query(`UPDATE posts SET score = score + 1 WHERE id = ?;`, [req.params.id], (err, rows) => {
+    if(err){
+      res.status(500).json(err);
+      return
+    }
+      res.status(200).json(rows);
+     });
+  });
+
+  app.put(`/posts/:id/downvote`, (req, res) => {
+    conn.query(`UPDATE posts SET score = score - 1 WHERE id = ?;`, [req.params.id], (err, rows) => {
+      if(err){
+        res.status(500).json(err);
+        return
+      }
+        res.status(200).json(rows);
+       });
+    });
 
 app.listen(3000, () => {
   console.log(`Listening on port 3000`);

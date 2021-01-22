@@ -1,0 +1,66 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: lightgrey;
+  font-family:'Franklin Gothic Light';
+  color: rgb(80, 77, 77);
+  font-weight: lighter;
+}
+
+#title{
+  font-size: 25px;
+  letter-spacing:1px;
+  padding-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+  font-size: 13px;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  margin-top: 100px;
+  padding: 50px;
+  background-color: white;
+  
+}
+
+input[type="username"], input[type="password"] {
+  width: 300px;
+  height: 40px;
+  margin: 5px 0;
+}
+
+input[type="password"] {
+  background:url(images/iconfinder_Eye_4472995.png) no-repeat;
+  background-size: contain;
+  background-position: center right;
+ 
+}
+
+input[type="submit"] {
+  background: black;
+  color: white;
+  border-radius: 30px;
+  padding: 15px 40px;
+}
+
+input:focus{
+  border:1px solid green;
+  outline: none;
+}
+
+.forgot {
+  display: flex;
+  justify-content:flex-end;
+}
