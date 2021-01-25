@@ -38,7 +38,7 @@ app.get('/posts', (req, res) => {
       res.status(500).json({'error': 'database error'});
       return;
     }
-    res.setHeader('Content-type', 'application/json');
+    //res.setHeader('Content-type', 'application/json');
     res.status(200).json(rows);
   });
 });
@@ -65,15 +65,38 @@ app.put(`/posts/:id/upvote`, (req, res) => {
      });
   });
 
-  app.put(`/posts/:id/downvote`, (req, res) => {
-    conn.query(`UPDATE posts SET score = score - 1 WHERE id = ?;`, [req.params.id], (err, rows) => {
-      if(err){
-        res.status(500).json(err);
-        return
-      }
-        res.status(200).json(rows);
-       });
-    });
+app.put(`/posts/:id/downvote`, (req, res) => {
+  conn.query(`UPDATE posts SET score = score - 1 WHERE id = ?;`, [req.params.id], (err, rows) => {
+    if(err){
+       res.status(500).json(err);
+       return
+     }
+      res.status(200).json(rows);
+     });
+   });
+
+app.delete(`/posts/:id`, (req, res) => {
+  conn.query(`DELETE FROM posts WHERE id = ?;`, [req.params.id], (err, rows) => {
+    if(err){
+      res.status(500).json(err);
+      return
+    }
+    res.setHeader('Content-type', 'application/json');
+    res.status(200).json(rows);
+  });
+});
+
+app.put(`/posts/:id`, (req, res) => {
+  conn.query(`UPDATE posts SET title = ? WHERE id = ?;`, [req.body.title, req.params.id], (err, rows) => {
+    if(err){
+       res.status(500).json(err);
+       return
+     }
+      res.status(200).json(rows);
+      res.setHeader('Content-type', 'application/json');
+     });
+   });
+
 
 app.listen(3000, () => {
   console.log(`Listening on port 3000`);
