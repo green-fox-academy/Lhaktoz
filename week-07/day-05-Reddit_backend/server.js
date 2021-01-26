@@ -25,6 +25,9 @@ conn.connect((err) => {
 
 app.get('/', (req, res) => {
   res.sendFile(path.join('index.html'));
+//res.sendFile(path.join(__dirname, 'index.html'));
+// res.sendFile(__dirname + '/index.html');
+
 });
 
 app.get('/hello', (req, res) => {
@@ -44,14 +47,19 @@ app.get('/posts', (req, res) => {
 });
 
 app.post('/posts', (req, res) => {
-conn.query(`INSERT INTO posts (title, url)
-          VALUES (?,?);`, [req.body.title, req.body.url], (err, rows) => {
-          if(err){
-            res.status(500).json(err);
-            return
-          }
-          res.status(200).json(rows);
-          });
+  conn.query(`INSERT INTO posts (title, url) VALUES (?,?);`, [req.body.title, req.body.url], (err, rows) => {
+    if(err){
+      res.status(500).json(err);
+      return
+    }
+    conn.query('SELECT * FROM posts WHERE id=(SELECT MAX(id) FROM posts);', (err,rows) => {
+      if(err){
+       res.status(500).json(err);
+       return
+       }
+       res.status(200).json(rows);
+    })    
+  });
 });
 
 
