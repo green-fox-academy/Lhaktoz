@@ -59,17 +59,9 @@ function addPostToSite(post){
 }
 
 
-/* <div class = "post-container">
-<div class="vote">
-  <button><img class="upvote" src="imgs/upvote.png"></button>
-  <p>400</p>
-  <button><img class="downvote" src="imgs/downvote.png"></button>
-</div>
-<div class="post-details">
-  <a href=""> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores explicabo magnam, modi cupiditate reiciendis sequi dolore tempore quas ea totam!</a>
-  <p class = timestamp>submitted 5 hours ago</p>
-  <button class="modify">Modify Post</button>
-  <button class="remove">Remove Post</button>
-  </div>
-</div> */
 
+const newPostButton = document.querySelector('.newPost');
+
+newPostButton.addEventListener('click', (event) => {
+  window.location.assign('http://localhost:3000/addpost')
+})

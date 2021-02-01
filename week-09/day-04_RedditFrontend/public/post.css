@@ -1,6 +1,5 @@
 * {
   margin: 0;
-  padding: 0;
   font-family: 'Lato', sans-serif;
 }
 
@@ -31,32 +30,22 @@ header p {
   position: absolute;
 }
 
-.container {
-  display: grid;
-  background-color: lightgrey;
-  min-height: 100vh;
-  grid-template-columns: 2fr 1fr;
-  grid-auto-rows: minmax(100px, auto);
-  gap: 10px;
-  padding: 20px 10px 10px 10px;
+body {
+background-color:lightgrey;
 }
 
-main  {
-  background-color: white;
-
-  
-}
-aside  {
+form {
+  margin: 20px 10px 10px 10px;
+  padding:10px;
+  width: 60%;
   background-color: white;
 }
 
-.post-container {
- display:flex;
- /* margin-bottom:10px; */
- border-bottom: 4px solid lightgrey;
+label {
+  display: block;
 }
-.vote {
-  width: 5%;
-  
+
+input {
+  display: block;
 }
 

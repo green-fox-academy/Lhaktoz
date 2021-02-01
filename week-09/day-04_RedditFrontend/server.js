@@ -28,8 +28,13 @@ app.get('/', (req, res) => {
   // console.log(request.headers)
 //res.sendFile(path.join(__dirname, 'index.html'));
 // res.sendFile(__dirname + '/index.html');
-
 });
+
+
+app.get('/addpost', (req, res) => {
+  res.sendFile(__dirname + '/public/post.html');
+})
+
 
 app.get('/hello', (req, res) => {
   res.send('hello word');
