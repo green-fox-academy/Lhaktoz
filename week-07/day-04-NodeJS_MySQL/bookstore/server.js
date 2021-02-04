@@ -45,9 +45,29 @@ app.get('/bookdetails', (req, res) => {
   INNER JOIN category
   ON book_mast.cate_id = category.cate_id
   INNER JOIN publisher
-  ON book_mast.pub_id = publisher.pub_id;
-  `
-  conn.query(query, (err, rows) => {
+  ON book_mast.pub_id = publisher.pub_id
+  WHERE cate_descrip LIKE (?)
+  AND pub_name LIKE (?)
+  ;`
+
+  let category = '';
+  let publisher = '';
+  let plt = 0;
+  let pgt = 0;
+  
+  if(!req.query.category) {
+    category = '%';
+  } else {
+    category = req.query.category;
+  }
+
+  if(!req.query.publisher) {
+    publisher = '%'
+  } else {
+    publisher = req.query.publisher
+  }
+
+  conn.query(query, [category, publisher], (err, rows) => {
     if(err) {
       // console.log(err.toString());
       res.status(500).json({'error': 'database error'});

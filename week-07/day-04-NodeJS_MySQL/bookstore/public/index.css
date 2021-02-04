@@ -1,3 +1,40 @@
-td {
-  border: 1px solid black;
+*{
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+text-align:center;
+margin-bottom: 30px;
+}
+
+body{
+  background-color: rgb(33, 169, 248);
+  margin: 30px;
+}
+table{
+  margin: auto;
+  width: 50%;
+  height: 500px;
+  border-collapse: collapse;
+  /* border-style: hidden; */
+  border: 3px solid black;
+  margin: auto;
+  background-color: #cfcaca;
+}
+
+td,th{
+  padding: 10px;
+  text-align: center;
+  width: 50%;
+  border: 2px solid black;
+}
+
+th {
+  background-color: #5d4b5ca9;
+}
+
+/* minden harmadik, az elsotol kezdve */
+tr:nth-child(2n) {
+  background-color: rgba(255, 111, 200, 0.644);
 }

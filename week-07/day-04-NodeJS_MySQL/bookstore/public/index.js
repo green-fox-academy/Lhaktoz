@@ -62,6 +62,10 @@ function addBookDetailsToTable(details) {
   newTD.innerHTML = details.book_name;
   newTR.appendChild(newTD);
 
+  let newTD5 = document.createElement('td');
+  newTD5.innerHTML = details.aut_name;
+  newTR.appendChild(newTD5);
+
   let newTD2 = document.createElement('td');
   newTD2.innerHTML = details.cate_descrip;
   newTR.appendChild(newTD2);
