@@ -48,13 +48,15 @@ app.get('/bookdetails', (req, res) => {
   ON book_mast.pub_id = publisher.pub_id
   WHERE cate_descrip LIKE (?)
   AND pub_name LIKE (?)
+  AND book_price < (?)
+  AND book_price > (?)
   ;`
 
   let category = '';
   let publisher = '';
   let plt = 0;
   let pgt = 0;
-  
+
   if(!req.query.category) {
     category = '%';
   } else {
@@ -64,10 +66,24 @@ app.get('/bookdetails', (req, res) => {
   if(!req.query.publisher) {
     publisher = '%'
   } else {
-    publisher = req.query.publisher
+    publisher = req.query.publisher;
   }
 
-  conn.query(query, [category, publisher], (err, rows) => {
+  if(!req.query.plt) {
+  //nem működik plt = `(SELECT MAX(book_price) FROM book_mast)`;
+  plt = 1000000000;
+  } else {
+    plt = req.query.plt
+  }
+
+  if(!req.query.pgt) {
+  //nem működik pgt = '(SELECT MIN(book_price) FROM book_mast)';
+  pgt = 0;
+  } else {
+    pgt = req.query.pgt;
+  }
+
+  conn.query(query, [category, publisher, plt, pgt], (err, rows) => {
     if(err) {
       // console.log(err.toString());
       res.status(500).json({'error': 'database error'});
