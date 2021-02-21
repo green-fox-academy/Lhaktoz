@@ -54,7 +54,7 @@ function addBookTitleToList(title) {
 
 
 function addBookDetailsToTable(details) {
-  const Tbody = document.querySelector('tbody')
+  const Tbody = document.querySelector('tbody');
   let newTR = document.createElement('tr');
   Tbody.appendChild(newTR);
 
@@ -80,3 +80,4 @@ function addBookDetailsToTable(details) {
   newTR.appendChild(newTD4);
 
 }
+

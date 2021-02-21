@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/addpost', (req, res) => {
-  res.sendFile(__dirname + '/public/post.html');
+  res.sendFile(path.join('post.html'));
 })
 
 

@@ -25,9 +25,9 @@ conn.connect((err) => {
 
 app.get('/', (req, res) => {
   res.sendFile(path.join('index.html'));
+  console.log(request.headers)
 //res.sendFile(path.join(__dirname, 'index.html'));
 // res.sendFile(__dirname + '/index.html');
-
 });
 
 app.get('/hello', (req, res) => {
@@ -69,9 +69,14 @@ app.put(`/posts/:id/upvote`, (req, res) => {
       res.status(500).json(err);
       return
     }
-      res.status(200).json(rows);
-     });
-  });
+    conn.query(`SELECT * FROM posts WHERE id = ?;`, [req.params.id], (err, rows) => {
+      if(err){
+        res.status(500).json(err);
+      }
+    })
+    res.status(200).json(rows);
+  });   
+});
 
 app.put(`/posts/:id/downvote`, (req, res) => {
   conn.query(`UPDATE posts SET score = score - 1 WHERE id = ?;`, [req.params.id], (err, rows) => {
@@ -79,9 +84,14 @@ app.put(`/posts/:id/downvote`, (req, res) => {
        res.status(500).json(err);
        return
      }
-      res.status(200).json(rows);
-     });
-   });
+    conn.query(`SELECT * FROM posts WHERE id = ?;`, [req.params.id], (err, rows) => {
+      if(err){
+        res.status(500).json(err);
+      }
+    })
+    res.status(200).json(rows);
+  });
+});
 
 app.delete(`/posts/:id`, (req, res) => {
   conn.query(`DELETE FROM posts WHERE id = ?;`, [req.params.id], (err, rows) => {
@@ -100,10 +110,10 @@ app.put(`/posts/:id`, (req, res) => {
        res.status(500).json(err);
        return
      }
-      res.status(200).json(rows);
-      res.setHeader('Content-type', 'application/json');
-     });
-   });
+    res.status(200).json(rows);
+    res.setHeader('Content-type', 'application/json');
+  });
+});
 
 
 app.listen(3000, () => {

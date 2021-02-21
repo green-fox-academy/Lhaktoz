@@ -65,3 +65,12 @@ const newPostButton = document.querySelector('.newPost');
 newPostButton.addEventListener('click', (event) => {
   window.location.assign('http://localhost:3000/addpost')
 })
+
+
+
+// remove button nincs kész
+const removeButton = document.querySelector(".remove");
+
+removeButton.addEventListener('click', (elem) => 
+    fetch(`http://localhost:3000/posts/${}`)
+)

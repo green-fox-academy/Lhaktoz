@@ -24,6 +24,4 @@ button.addEventListener('click', (event) => {
   .catch(err => {
     console.log(err.message);
   })
-
-
 })
