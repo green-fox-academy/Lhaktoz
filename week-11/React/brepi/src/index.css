@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.beer-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin:0 10%;
+  justify-content: center;
+}
+
+.beer-preview {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 1%;
+  width: 25%;
+  display:flex;
+  flex-direction: column;
+  align-content:space-between;
+}
+
+.beer {
+  margin: 0;
+  padding: 0;
+  
+}
+
+.displayNone {
+  display: none;
+}
+/* 
+.beer img {
+  display: inline;
+} */
